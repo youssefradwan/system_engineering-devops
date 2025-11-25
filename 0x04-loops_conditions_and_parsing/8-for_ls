@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+for file in *; do
+  # Skip hidden files (those starting with .)
+  [ -e "$file" ] || continue
+  # Extract the part after the first dash
+  echo "${file#*-}"
+done
