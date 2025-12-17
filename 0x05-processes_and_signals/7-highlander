@@ -1,15 +1,12 @@
 #!/usr/bin/env bash
-# A Bash script that prints "To infinity and beyond" indefinitely and reacts to SIGTERM
+# This script displays a message indefinitely and resists SIGTERM signals
+trap 'echo "I am invincible!!!"' SIGTERM
 
-term_handler() {
-    echo "I am invincible!!!"
-}
-
-# Trap SIGTERM signal and call term_handler
-trap 'term_handler' SIGTERM
-
-# Infinite loop
-while true; do
+while true
+do
     echo "To infinity and beyond"
     sleep 2
 done
+#!/usr/bin/env bash
+# This script sends a SIGTERM signal to the 7-highlander process
+pkill -f 7-highlander
